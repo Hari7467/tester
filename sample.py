@@ -1,13 +1,14 @@
-impor random 
+def calculate_area(radius):
+    pi = 3.14159
+    area = pi * radius * radius  # Correct calculation, but we forgot to check for negative radius
+    
+    return area
 
-def get_random_number():
-    return random.randint(1, 100)
+def print_area(radius):
+    area = calculate_area(radius)
+    print("Area of the circle: " + area)  # Type Error: 'area' is a float, can't concatenate with a string
 
-def print_message():
-    number = get_random_number()
-    if number % 2 == 0:  # Syntax Error (= should be ==)
-        print("Even number:", number)
-    else:
-        print("Odd number:", number)  # Syntax Error (missing colon)
+def main():
+    print_area(-5)  # Logic error: radius cannot be negative for calculating area
 
-print_message()
+main()
